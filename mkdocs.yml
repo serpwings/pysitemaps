@@ -1,5 +1,5 @@
 site_name: pysitemaps
-site_description: Python Package Website Sitemaps
+site_description: Python Package to Create, Manipulate and Analyze Website Sitemaps
 site_author: Faisal Shahzad
 
 site_url: https://pysitemaps.seowings.org
@@ -25,4 +25,4 @@ markdown_extensions:
   
 theme: readthedocs
 
-copyright: © Copyright 2022 Faisal Shahzad [seowings.org](https://www.seowings.org){target=_blank}
+copyright: © Copyright 2022 Faisal Shahzad [seowings.org](https://www.seowings.org)
