@@ -1,0 +1,28 @@
+site_name: pysitemaps
+site_description: Python Package Website Sitemaps
+site_author: Faisal Shahzad
+
+site_url: https://pysitemaps.seowings.org
+
+repo_url: https://github.com/seowings/pysitemaps
+edit_uri: blob/main/docs/
+
+nav:
+  - Home: index.md
+
+plugins:
+  - search
+  - mkdocstrings
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - smarty
+  - meta
+  - toc:
+      permalink: True
+  - attr_list
+  
+theme: readthedocs
+
+copyright: © Copyright 2022 Faisal Shahzad [seowings.org](https://www.seowings.org){target=_blank}
