@@ -10,7 +10,7 @@ We believe in monolithic software development and created this tiny package that
 
 ## How to Use pysitemaps?
 
-You can find detailed tutorial on [pysitemaps website](https://pysitemaps.seowings.org).
+You can find detailed tutorial on [pysitemaps website](https://https://pysitemaps.pages.dev).
 
 ## Contribute
 
