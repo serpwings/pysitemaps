@@ -15,3 +15,7 @@ You can find detailed tutorial on [pysitemaps website](https://pysitemaps.pages.
 ## Contribute
 
 Pull Requests, Feature Suggestions, and collaborations are welcome.
+
+## About Us
+
+This work is a collaborative effort of [seowings](https://serpwings.com/), and [seowings](https://serpwings.com/).
