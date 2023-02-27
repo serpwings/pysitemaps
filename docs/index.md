@@ -10,7 +10,7 @@ We believe in monolithic software development and created this tiny package that
 
 ## How to Use pysitemaps?
 
-You can find detailed tutorial on [pysitemaps website](https://pysitemaps.pages.dev).
+You can find detailed tutorial on [pysitemaps tutorial website](https://serpwings.com/software/python-sitemaps/).
 
 ## Contribute
 
@@ -18,6 +18,6 @@ Pull Requests, Feature Suggestions, and collaborations are welcome.
 
 ## About Us
 
-[SERP Wings](https://www.serpwings.com){target=_blank} is a digital organization to **Boosting SERP Performance Though Opensource Tools**.
+[SERP Wings](https://www.serpwings.com){target=_blank} is a digital organization which develops software solutions for **Boosting SERP Performance Though Opensource Tools**.
 
 [seowings](https://www.seowings.org){target=_blank} is an opensource project to write, develop and promote tools for Data Sciences and Digital Marketing.
