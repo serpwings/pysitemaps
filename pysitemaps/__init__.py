@@ -5,7 +5,7 @@
 pysitemaps: A Python Package Website Sitemaps
 
 MIT License
-Copyright (c) 2022 SERP Wings www.serpwings.com
+Copyright (c) 2023 SERP Wings www.serpwings.com
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -39,7 +39,7 @@ from xml.dom import minidom, Node
 XSL_ATTR_LIST = {
     "xmlns": "http://www.sitemaps.org/schemas/sitemap/0.9",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xmlns:image": "http://www.google.com/schemas/sitemap-image/1.1"
+    "xmlns:image": "http://www.google.com/schemas/sitemap-image/1.1",
 }
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -48,7 +48,7 @@ XSL_ATTR_LIST = {
 
 
 class Url:
-    def __init__(self, loc, lastmod, images_loc):
+    def __init__(self, loc, lastmod=datetime.now().strftime("%Y-%m-%d"), images_loc=[]):
         self.loc = loc
         self.lastmod = lastmod
         self.image_locations = images_loc  # array
@@ -57,18 +57,26 @@ class Url:
         self.image_locations += images_loc
 
     def as_dict(self):
-        return {"loc": self.loc, "lastmod": self.lastmod, "images": self.image_locations}
+        return {
+            "loc": self.loc,
+            "lastmod": self.lastmod,
+            "images": self.image_locations,
+        }
 
 
 class Sitemap:
-    def __init__(self):
+    def __init__(self, sitename="", xsl=""):
         self.list_of_urls = []
-        self.xslt = "//seowings.org/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"
+        self.xsl = xsl
         self.dom_sitemap = minidom.Document()
-        self.sitename = "https://www.seowings.org/"
+        self.sitename = sitename
 
-    def write(self):
-        with open("sitemap.xml", "w") as fp:
+    def read(self, path=""):
+        if path:
+            pass  # read sitemap
+
+    def write(self, path=""):
+        with open(f"{path}sitemap.xml", "w") as fp:
             self.dom_sitemap.writexml(
                 fp, indent="", addindent="\t", newl="\n", encoding="utf-8"
             )
@@ -78,22 +86,21 @@ class Sitemap:
 
     def process(self):
         self.dom_sitemap.appendChild(
-            self.dom_sitemap.createComment(f"sitemap avialble at {self.sitename}"))
+            self.dom_sitemap.createComment(f"sitemap avialble at {self.sitename}")
+        )
 
-        node_sitemap_stylesheet = self.dom_sitemap.createProcessingInstruction('xml-stylesheet',
-                                                                               f'type="text/xsl" href="{self.xslt}"')
+        if self.xsl:
+            node_sitemap_stylesheet = self.dom_sitemap.createProcessingInstruction(
+                "xml-stylesheet", f'type="text/xsl" href="{self.xsl}"'
+            )
+            self.dom_sitemap.insertBefore(
+                node_sitemap_stylesheet, self.dom_sitemap.firstChild
+            )
 
-        self.dom_sitemap.insertBefore(node_sitemap_stylesheet,
-                                      self.dom_sitemap.firstChild
-                                      )
-
-        node_urlset = self.dom_sitemap.createElement("node_urlset")
-        xsl_attributes = ["xmlns:xsi",
-                          "xmlns:image",
-                          "xmlns"]
+        node_urlset = self.dom_sitemap.createElement("urlset")
+        xsl_attributes = ["xmlns:xsi", "xmlns:image", "xmlns"]
         for xsl_attribute in xsl_attributes:
-            node_urlset.setAttribute(
-                xsl_attribute, XSL_ATTR_LIST[xsl_attribute])
+            node_urlset.setAttribute(xsl_attribute, XSL_ATTR_LIST[xsl_attribute])
 
         self.dom_sitemap.appendChild(node_urlset)
 
@@ -101,24 +108,24 @@ class Sitemap:
             node_url = self.dom_sitemap.createElement("url")
 
             node_url_loc = self.dom_sitemap.createElement("loc")
-            node_url_loc.appendChild(
-                self.dom_sitemap.createTextNode(current_url.loc))
+            node_url_loc.appendChild(self.dom_sitemap.createTextNode(current_url.loc))
 
             node_url.appendChild(node_url_loc)
 
-            node_lastmod = self.dom_sitemap.createElement("node_lastmod")
+            node_lastmod = self.dom_sitemap.createElement("lastmod")
             node_lastmod.appendChild(
-                self.dom_sitemap.createTextNode(current_url.lastmod))
+                self.dom_sitemap.createTextNode(current_url.lastmod)
+            )
 
             node_url.appendChild(node_lastmod)
 
             for image_location in current_url.image_locations:
-                node_image_image = self.dom_sitemap.createElement(
-                    "image:image")
+                node_image_image = self.dom_sitemap.createElement("image:image")
 
                 node_image_loc = self.dom_sitemap.createElement("image:loc")
                 node_image_loc.appendChild(
-                    self.dom_sitemap.createTextNode(image_location))
+                    self.dom_sitemap.createTextNode(image_location)
+                )
 
                 node_image_image.appendChild(node_image_loc)
 
@@ -127,6 +134,5 @@ class Sitemap:
             node_urlset.appendChild(node_url)
 
         self.dom_sitemap.appendChild(
-            self.dom_sitemap.createComment(
-                "XML Sitemap generated by pythonic-sitemap")
+            self.dom_sitemap.createComment("XML Sitemap generated by pysitemaps")
         )

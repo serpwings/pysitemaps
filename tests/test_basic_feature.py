@@ -8,7 +8,8 @@ def test_script_url():
 
 
 def test_script_sitemap():
-    smp = Sitemap()
+    xsl = "//seowings.org/wp-content/plugins/wordpress-seo/css/main-sitemap.xsl"
+    smp = Sitemap(sitename="https://www.seowings.org/")
     smp.add_url(Url("a.html", "2022", ["abc.png"]))
     smp.add_url(Url("b.html", "2022", ["debc.png"]))
 
