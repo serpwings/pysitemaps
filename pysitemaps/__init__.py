@@ -528,40 +528,10 @@ class XmlDocument:
 
 
 class Sitemap:
-    """
-    A class to represent a Sitemap.
+    """Sitemap: A class to represent a Sitemap.
 
     This class contains several function methods to  read and fetch the website sitemap from a local or a remote file location.
     You can use write function to save the file to any file location.
-
-    Attributes
-    ----------
-    website_name : str
-        website netloc (with or without Scheme)
-    file_path : str
-        sitemap location of the current website (with scheme and should end with .xml)
-    xsl_file : str
-        Loation of the XSL Style Sheet File
-    content : dict
-        contain sitemap content. Parent Key contains main sitemap. If Sub Sitemaps are present then they are included in sub_sitemps.
-
-    Methods
-    -------
-    read(file_path="",include_urls=False):
-        Read Sitemap from file_path. File should end with .xml extention. Include_urls will include all URL/sitemap locs.
-
-    fetch(file_path="", include_urls=False):
-        Fetch remote sitemap. file_path should end with .xml extention. Include_urls will include all URL/sitemap locs.
-
-    append(object_to_append):
-        Append any object to Sitemap e.g. XMLDocument as sitemap, or URL, and dict Object as URL.
-
-    as_dict:
-        return sitemap as a dict/json object.
-
-    write:
-        write sitemap to a local file.
-
     """
 
     def __init__(
@@ -592,7 +562,7 @@ class Sitemap:
 
     def read(self, file_path: str = "") -> None:
         """Read sitemap from local file_path
-
+        
         If not specified then file_path specified at the time creation of Sitemap objet.
         Args:
             file_path (str, optional): Sitemap file path. Defaults to "".
