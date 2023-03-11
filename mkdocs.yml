@@ -10,7 +10,10 @@ edit_uri: blob/main/docs/
 nav:
   - Home: index.md
   - Tutorial: tutorial.md
-  - API: api.md
+  - API: 
+    - Sitemap Class: sitemap.md
+    - XmlDocument Class: xmldocument.md
+    - Url Class: url.md
 
 plugins:
   - search

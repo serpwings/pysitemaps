@@ -1,3 +1,3 @@
-# pysitemaps
+# Sitemap Class
 
 ::: pysitemaps.Sitemap
