@@ -53,12 +53,6 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">API</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Sitemap">pysitemaps.Sitemap</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#pysitemaps.Sitemap--attributes">Attributes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#pysitemaps.Sitemap--methods">Methods</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Sitemap.__init__">__init__()</a>
     </li>
@@ -109,80 +103,17 @@
   <div class="doc doc-contents first">
 
   
-      <p>A class to represent a Sitemap.</p>
-<p>This class contains several function methods to  read and fetch the website sitemap from a local or a remote file location.
+      <p>This class contains several function methods to  read and fetch the website sitemap from a local or a remote file location.
 You can use write function to save the file to any file location.</p>
-<h3 id="pysitemaps.Sitemap--attributes">Attributes<a class="headerlink" href="#pysitemaps.Sitemap--attributes" title="Permanent link">&para;</a></h3>
 
-<details class="website_name-">
-  <summary>str</summary>
-  <p>website netloc (with or without Scheme)</p>
-</details>
-<details class="file_path-">
-  <summary>str</summary>
-  <p>sitemap location of the current website (with scheme and should end with .xml)</p>
-</details>
-<details class="xsl_file-">
-  <summary>str</summary>
-  <p>Loation of the XSL Style Sheet File</p>
-</details>
-<details class="content-">
-  <summary>dict</summary>
-  <p>contain sitemap content. Parent Key contains main sitemap. If Sub Sitemaps are present then they are included in sub_sitemps.</p>
-</details>      <h3 id="pysitemaps.Sitemap--methods">Methods<a class="headerlink" href="#pysitemaps.Sitemap--methods" title="Permanent link">&para;</a></h3>
-<p>read(file_path=&rdquo;&ldquo;,include_urls=False):
-    Read Sitemap from file_path. File should end with .xml extention. Include_urls will include all URL/sitemap locs.</p>
-<p>fetch(file_path=&rdquo;&ldquo;, include_urls=False):
-    Fetch remote sitemap. file_path should end with .xml extention. Include_urls will include all URL/sitemap locs.</p>
-<p>append(object_to_append):
-    Append any object to Sitemap e.g. XMLDocument as sitemap, or URL, and dict Object as URL.</p>
-
-<details class="as_dict">
-  <summary>as_dict</summary>
-  <p>return sitemap as a dict/json object.</p>
-</details>
-<details class="write">
-  <summary>write</summary>
-  <p>write sitemap to a local file.</p>
-</details>
 
         <details class="quote">
           <summary>Source code in <code>pysitemaps/__init__.py</code></summary>
           <pre class="codehilite"><code class="language-python">class Sitemap:
-    """
-    A class to represent a Sitemap.
+    """Sitemap: A class to represent a Sitemap.
 
     This class contains several function methods to  read and fetch the website sitemap from a local or a remote file location.
     You can use write function to save the file to any file location.
-
-    Attributes
-    ----------
-    website_name : str
-        website netloc (with or without Scheme)
-    file_path : str
-        sitemap location of the current website (with scheme and should end with .xml)
-    xsl_file : str
-        Loation of the XSL Style Sheet File
-    content : dict
-        contain sitemap content. Parent Key contains main sitemap. If Sub Sitemaps are present then they are included in sub_sitemps.
-
-    Methods
-    -------
-    read(file_path="",include_urls=False):
-        Read Sitemap from file_path. File should end with .xml extention. Include_urls will include all URL/sitemap locs.
-
-    fetch(file_path="", include_urls=False):
-        Fetch remote sitemap. file_path should end with .xml extention. Include_urls will include all URL/sitemap locs.
-
-    append(object_to_append):
-        Append any object to Sitemap e.g. XMLDocument as sitemap, or URL, and dict Object as URL.
-
-    as_dict:
-        return sitemap as a dict/json object.
-
-    write:
-        write sitemap to a local file.
-
     """
 
     def __init__(
