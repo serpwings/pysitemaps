@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Faisal Shahzad" /><link rel="canonical" href="https://pysitemaps.pages.dev/url/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Url Class - pysitemaps</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Url Class";
+        var mkdocs_page_input_path = "url.md";
+        var mkdocs_page_url = "/url/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> pysitemaps
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tutorial/">Tutorial</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../sitemap/">Sitemap Class</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../xmldocument/">XmlDocument Class</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Url Class</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Url">pysitemaps.Url</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pysitemaps.Url--attributes">Attributes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pysitemaps.Url--methods">Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Url.__init__">__init__()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Url.add_images">add_images()</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Url.as_dict">as_dict()</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">pysitemaps</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>API &raquo;</li>
+      <li>Url Class</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/serpwings/pysitemaps/blob/main/docs/url.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="url-class">Url Class<a class="headerlink" href="#url-class" title="Permanent link">&para;</a></h1>
+
+
+<div class="doc doc-object doc-class">
+
+
+<a id="pysitemaps.Url"></a>
+  <div class="doc doc-contents first">
+
+  
+      <p>A class to store a URL Object.</p>
+<p>This class contains several function/methods to handle sitemap urls.</p>
+<h3 id="pysitemaps.Url--attributes">Attributes<a class="headerlink" href="#pysitemaps.Url--attributes" title="Permanent link">&para;</a></h3>
+
+<details class="loc-">
+  <summary>str</summary>
+  <p>XML Sitemap netloc (with or without Scheme)</p>
+</details>
+<details class="lastmod-">
+  <summary>str</summary>
+  <p>Last Modification date of the XML Sitemap</p>
+</details>
+<details class="image_locations-">
+  <summary>list</summary>
+  <p>List of Images included within a URL/Page.</p>
+</details>      <h3 id="pysitemaps.Url--methods">Methods<a class="headerlink" href="#pysitemaps.Url--methods" title="Permanent link">&para;</a></h3>
+<p>add_images(images_loc=[])
+    use to append images to a given url.</p>
+<p>as_dict():
+    return sitemap as a dict/json object.</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>pysitemaps/__init__.py</code></summary>
+          <pre class="codehilite"><code class="language-python">class Url:
+    """
+    A class to store a URL Object.
+
+    This class contains several function/methods to handle sitemap urls.
+
+
+    Attributes
+    ----------
+    loc : str
+        XML Sitemap netloc (with or without Scheme)
+    lastmod : str
+        Last Modification date of the XML Sitemap
+    image_locations : list
+        List of Images included within a URL/Page.
+
+    Methods
+    -------
+
+    add_images(images_loc=[])
+        use to append images to a given url.
+
+    as_dict():
+        return sitemap as a dict/json object.
+    """
+
+    def __init__(
+        self,
+        loc: str,
+        lastmod: str = datetime.now().strftime("%Y-%m-%d"),
+        images_loc: list = [],
+    ) -&gt; None:
+        """Intialize Url Object
+
+        Args:
+            loc (str): location of Url (full path with scheme)
+            lastmod (str, optional): last modification date of Url. Defaults to datetime.now().strftime("%Y-%m-%d").
+            images_loc (list, optional): List of Images included in the Url. Defaults to [].
+        """
+        self.loc = loc
+        self.lastmod = lastmod
+        self.image_locations = images_loc
+
+    def add_images(self, images_loc: list = []) -&gt; None:
+        """append images to current Url
+
+        Args:
+            images_loc (list, optional): list of images location. Defaults to [].
+        """
+        self.image_locations += images_loc
+
+    def as_dict(self) -&gt; dict:
+        """return Url as dict object
+
+        Returns:
+            dict: contains loc, lastmod and images keys.
+        """
+        return {
+            "loc": self.loc,
+            "lastmod": self.lastmod,
+            "images": self.image_locations,
+        }</code></pre>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pysitemaps.Url.__init__" class="doc doc-heading">
+<code class="codehilite language-python">__init__(loc, lastmod=datetime.now().strftime('%Y-%m-%d'), images_loc=[])</code>
+
+<a href="#pysitemaps.Url.__init__" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Intialize Url Object</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>loc</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>location of Url (full path with scheme)</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>lastmod</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td><p>last modification date of Url. Defaults to datetime.now().strftime(&ldquo;%Y-%m-%d&rdquo;).</p></td>
+          <td>
+                <code>datetime.now().strftime(&#39;%Y-%m-%d&#39;)</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>images_loc</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>List of Images included in the Url. Defaults to [].</p></td>
+          <td>
+                <code>[]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pysitemaps/__init__.py</code></summary>
+        <pre class="codehilite"><code class="language-python">def __init__(
+    self,
+    loc: str,
+    lastmod: str = datetime.now().strftime("%Y-%m-%d"),
+    images_loc: list = [],
+) -&gt; None:
+    """Intialize Url Object
+
+    Args:
+        loc (str): location of Url (full path with scheme)
+        lastmod (str, optional): last modification date of Url. Defaults to datetime.now().strftime("%Y-%m-%d").
+        images_loc (list, optional): List of Images included in the Url. Defaults to [].
+    """
+    self.loc = loc
+    self.lastmod = lastmod
+    self.image_locations = images_loc</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pysitemaps.Url.add_images" class="doc doc-heading">
+<code class="codehilite language-python">add_images(images_loc=[])</code>
+
+<a href="#pysitemaps.Url.add_images" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>append images to current Url</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>images_loc</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td><p>list of images location. Defaults to [].</p></td>
+          <td>
+                <code>[]</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pysitemaps/__init__.py</code></summary>
+        <pre class="codehilite"><code class="language-python">def add_images(self, images_loc: list = []) -&gt; None:
+    """append images to current Url
+
+    Args:
+        images_loc (list, optional): list of images location. Defaults to [].
+    """
+    self.image_locations += images_loc</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="pysitemaps.Url.as_dict" class="doc doc-heading">
+<code class="codehilite language-python">as_dict()</code>
+
+<a href="#pysitemaps.Url.as_dict" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>return Url as dict object</p>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>dict</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td><p>contains loc, lastmod and images keys.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>pysitemaps/__init__.py</code></summary>
+        <pre class="codehilite"><code class="language-python">def as_dict(self) -&gt; dict:
+    """return Url as dict object
+
+    Returns:
+        dict: contains loc, lastmod and images keys.
+    """
+    return {
+        "loc": self.loc,
+        "lastmod": self.lastmod,
+        "images": self.image_locations,
+    }</code></pre>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../xmldocument/" class="btn btn-neutral float-left" title="XmlDocument Class"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>© Copyright 2022 Faisal Shahzad</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/serpwings/pysitemaps" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../xmldocument/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
