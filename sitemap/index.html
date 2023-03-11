@@ -125,14 +125,14 @@ You can use write function to save the file to any file location.</p>
     def __init__(
         self,
         website_name: str = None,
-        file_path: str = "sitemap.xml",
+        file_path: str = "",
         xsl_file: str = "",
     ) -&gt; None:
         """Initlaize Sitemap Object
 
         Args:
             website_name (str, optional): Webiste Name. Defaults to None.
-            file_path (str, optional): Path of Sitemap.xml. Defaults to "sitemap.xml".
+            file_path (str, optional): Path of Sitemap.xml. Defaults to "".
             xsl_file (str, optional): Path of xsl_file. Defaults to "".
         """
         if website_name:
@@ -179,12 +179,12 @@ You can use write function to save the file to any file location.</p>
         if not file_path.endswith("xml"):
             sitemaps = search_sitemap(self.website_name)
 
-        for file_path in sitemaps:
-            if file_path.endswith("xml"):
+        for sitemap in sitemaps:
+            if sitemap.endswith("xml"):
                 self.content["parent"] = XmlDocument(
-                    file_path, include_urls=include_urls
+                    sitemap, include_urls=include_urls
                 )
-                response = get_remote_content(file_path)
+                response = get_remote_content(sitemap)
                 if response.status_code &lt; 400:
                     self.xsl_file = extract_xsl_file(xml_as_text=response.text)
                     self.content["sub_sitemaps"] += extract_sub_sitemaps(
@@ -291,7 +291,7 @@ You can use write function to save the file to any file location.</p>
 
 
 <h2 id="pysitemaps.Sitemap.__init__" class="doc doc-heading">
-<code class="codehilite language-python">__init__(website_name=None, file_path='sitemap.xml', xsl_file='')</code>
+<code class="codehilite language-python">__init__(website_name=None, file_path='', xsl_file='')</code>
 
 <a href="#pysitemaps.Sitemap.__init__" class="headerlink" title="Permanent link">&para;</a></h2>
 
@@ -326,9 +326,9 @@ You can use write function to save the file to any file location.</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Path of Sitemap.xml. Defaults to &ldquo;sitemap.xml&rdquo;.</p></td>
+          <td><p>Path of Sitemap.xml. Defaults to &ldquo;&rdquo;.</p></td>
           <td>
-                <code>&#39;sitemap.xml&#39;</code>
+                <code>&#39;&#39;</code>
           </td>
         </tr>
         <tr>
@@ -349,14 +349,14 @@ You can use write function to save the file to any file location.</p>
         <pre class="codehilite"><code class="language-python">def __init__(
     self,
     website_name: str = None,
-    file_path: str = "sitemap.xml",
+    file_path: str = "",
     xsl_file: str = "",
 ) -&gt; None:
     """Initlaize Sitemap Object
 
     Args:
         website_name (str, optional): Webiste Name. Defaults to None.
-        file_path (str, optional): Path of Sitemap.xml. Defaults to "sitemap.xml".
+        file_path (str, optional): Path of Sitemap.xml. Defaults to "".
         xsl_file (str, optional): Path of xsl_file. Defaults to "".
     """
     if website_name:
@@ -554,12 +554,12 @@ You can use write function to save the file to any file location.</p>
     if not file_path.endswith("xml"):
         sitemaps = search_sitemap(self.website_name)
 
-    for file_path in sitemaps:
-        if file_path.endswith("xml"):
+    for sitemap in sitemaps:
+        if sitemap.endswith("xml"):
             self.content["parent"] = XmlDocument(
-                file_path, include_urls=include_urls
+                sitemap, include_urls=include_urls
             )
-            response = get_remote_content(file_path)
+            response = get_remote_content(sitemap)
             if response.status_code &lt; 400:
                 self.xsl_file = extract_xsl_file(xml_as_text=response.text)
                 self.content["sub_sitemaps"] += extract_sub_sitemaps(
@@ -746,7 +746,7 @@ You can use write function to save the file to any file location.</p>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-      <p>© Copyright 2022 Faisal Shahzad</p>
+      <p>© Copyright 2023 Faisal Shahzad</p>
   </div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
