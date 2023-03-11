@@ -58,12 +58,6 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Url Class</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Url">pysitemaps.Url</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#pysitemaps.Url--attributes">Attributes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#pysitemaps.Url--methods">Methods</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#pysitemaps.Url.__init__">__init__()</a>
     </li>
@@ -111,24 +105,6 @@
   
       <p>A class to store a URL Object.</p>
 <p>This class contains several function/methods to handle sitemap urls.</p>
-<h3 id="pysitemaps.Url--attributes">Attributes<a class="headerlink" href="#pysitemaps.Url--attributes" title="Permanent link">&para;</a></h3>
-
-<details class="loc-">
-  <summary>str</summary>
-  <p>XML Sitemap netloc (with or without Scheme)</p>
-</details>
-<details class="lastmod-">
-  <summary>str</summary>
-  <p>Last Modification date of the XML Sitemap</p>
-</details>
-<details class="image_locations-">
-  <summary>list</summary>
-  <p>List of Images included within a URL/Page.</p>
-</details>      <h3 id="pysitemaps.Url--methods">Methods<a class="headerlink" href="#pysitemaps.Url--methods" title="Permanent link">&para;</a></h3>
-<p>add_images(images_loc=[])
-    use to append images to a given url.</p>
-<p>as_dict():
-    return sitemap as a dict/json object.</p>
 
 
         <details class="quote">
@@ -138,25 +114,6 @@
     A class to store a URL Object.
 
     This class contains several function/methods to handle sitemap urls.
-
-
-    Attributes
-    ----------
-    loc : str
-        XML Sitemap netloc (with or without Scheme)
-    lastmod : str
-        Last Modification date of the XML Sitemap
-    image_locations : list
-        List of Images included within a URL/Page.
-
-    Methods
-    -------
-
-    add_images(images_loc=[])
-        use to append images to a given url.
-
-    as_dict():
-        return sitemap as a dict/json object.
     """
 
     def __init__(
