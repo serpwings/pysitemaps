@@ -369,25 +369,6 @@ class Url:
     A class to store a URL Object.
 
     This class contains several function/methods to handle sitemap urls.
-
-
-    Attributes
-    ----------
-    loc : str
-        XML Sitemap netloc (with or without Scheme)
-    lastmod : str
-        Last Modification date of the XML Sitemap
-    image_locations : list
-        List of Images included within a URL/Page.
-
-    Methods
-    -------
-
-    add_images(images_loc=[])
-        use to append images to a given url.
-
-    as_dict():
-        return sitemap as a dict/json object.
     """
 
     def __init__(
@@ -435,30 +416,6 @@ class XmlDocument:
     This class contains several function methods to handle XML Sitemaps.
     It includes convenient functions e.g. add_url and add_url_set.
 
-
-    Attributes
-    ----------
-    loc : str
-        XML Sitemap netloc (with or without Scheme)
-    lastmod : str
-        Last Modification date of the XML Sitemap
-    urls : list
-        List of URLs present in the file.
-
-    Methods
-    -------
-
-    add_url(loc, lastmod=datetime.now().strftime("%Y-%m-%d"),images_loc=[])
-        Can add single url. URL loc is required argument.
-
-    add_object(url_object)
-        Append Url Object to existing url lists.
-
-    add_from_text(xml_as_text)
-        this function extract and append url_set from xml_as_text. Usefull with reading sitemaps from files.
-
-    as_dict():
-        return sitemap as a dict/json object.
     """
 
     def __init__(
