@@ -494,14 +494,14 @@ class Sitemap:
     def __init__(
         self,
         website_name: str = None,
-        file_path: str = "sitemap.xml",
+        file_path: str = "",
         xsl_file: str = "",
     ) -> None:
         """Initlaize Sitemap Object
 
         Args:
             website_name (str, optional): Webiste Name. Defaults to None.
-            file_path (str, optional): Path of Sitemap.xml. Defaults to "sitemap.xml".
+            file_path (str, optional): Path of Sitemap.xml. Defaults to "".
             xsl_file (str, optional): Path of xsl_file. Defaults to "".
         """
         if website_name:
@@ -548,12 +548,12 @@ class Sitemap:
         if not file_path.endswith("xml"):
             sitemaps = search_sitemap(self.website_name)
 
-        for file_path in sitemaps:
-            if file_path.endswith("xml"):
+        for sitemap in sitemaps:
+            if sitemap.endswith("xml"):
                 self.content["parent"] = XmlDocument(
-                    file_path, include_urls=include_urls
+                    sitemap, include_urls=include_urls
                 )
-                response = get_remote_content(file_path)
+                response = get_remote_content(sitemap)
                 if response.status_code < 400:
                     self.xsl_file = extract_xsl_file(xml_as_text=response.text)
                     self.content["sub_sitemaps"] += extract_sub_sitemaps(
