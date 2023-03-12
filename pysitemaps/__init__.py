@@ -63,9 +63,13 @@ SITEMAP_SEARCH_PATHS = [
     "sitemap1.xml",
     "sitemap.php",
     "sitemap/",
+    "sitemas/",
+    "sitemas.xml",
     "sitemap.txt",
+    "sitemap.xml.gz",
     "post-sitemap.xml",
     "page-sitemap.xml",
+    "news-sitemap.xml",
 ]
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -62,7 +62,7 @@ setup(
     ],
     packages=["pysitemaps"],
     python_requires=">=3.9",
-    install_requires=[],
+    install_requires=["requests", "beautifulsoup4", "lxml"],
     extras_require={
         "dev": [
             "setuptools",
